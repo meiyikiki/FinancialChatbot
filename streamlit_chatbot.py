@@ -1,3 +1,5 @@
+pip install -r requirements.txt
+
 import json
 import openai
 import pandas as pd
