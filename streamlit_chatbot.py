@@ -79,7 +79,7 @@ def identify_request(user_input):
 def extract_ticker_with_chatgpt(user_input):
     try: 
         response = openai.ChatCompletion.create(
-            mmodel='gpt-3.5-turbo',
+            model='gpt-3.5-turbo',
             messages=[
                 {"role": "system", "content": "You are a financial assistant. Extract the ticker symbol from user requests."},
                 {"role": "user", "content": user_input}
