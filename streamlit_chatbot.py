@@ -87,7 +87,7 @@ def extract_ticker_with_chatgpt(user_input):
             max_tokens=10
         )
         print(response)
-        content = response['choices'][0]['message']['content']
+        content = response.choices[0].message.content
         print("API response:", content)  # This will print the API response to the console
         return content.strip()
     except Exception as e:
@@ -136,7 +136,7 @@ if st.button('Analyze'):
                     ],
                     max_tokens=250
                 )
-                openai_interpretation = openai_response['choices'][0]['message']['content'].strip()
+                openai_interpretation = openai_response.choices[0].message.content.strip()
 
                 combined_interpretation = openai_interpretation + "\n"
                 st.session_state['messages'].append({'role': 'assistant', 'content': combined_interpretation})
