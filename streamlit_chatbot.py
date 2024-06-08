@@ -77,7 +77,7 @@ def identify_request(user_input):
 
 def extract_ticker_with_chatgpt(user_input):
     try: 
-        response = openai.ChatCompletion.create(
+        response = openai.chat.completions.create(
             model='gpt-3.5-turbo',
             messages=[
                 {"role": "system", "content": "You are a financial assistant. Extract the ticker symbol from user requests."},
@@ -128,7 +128,7 @@ if st.button('Analyze'):
 
     if financial_data:
             try:
-                openai_response = openai.ChatCompletion.create(
+                openai_response = openai.chat.completions.create(
                     model='gpt-3.5-turbo',
                     messages=[
                         {"role": "system", "content": "You are a professional Financial Analyst that provides easy to understand responses to requests."},
